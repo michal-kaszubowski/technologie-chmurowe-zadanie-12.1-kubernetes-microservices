@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: micro-services
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: micro-services
+  template:
+    metadata:
+      labels:
+        app: micro-services
+    spec:
+      containers:
+      - name: micro-a
+        image: michalkaszubowski/node-micro-a:latest
+        ports:
+        - containerPort: 3000
+      - name: micro-b
+        image: michalkaszubowski/node-micro-b:latest
+        ports:
+        - containerPort: 3001

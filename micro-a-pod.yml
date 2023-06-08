@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: micro-a-pod
+spec:
+  containers:
+  - name: micro-a
+    image: michalkaszubowski/node-micro-a:latest
+    ports:
+    - containerPort: 3000

@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Pod
+metadata:
+   name: micro-b-pod
+spec:
+  containers:
+  - name: micro-b
+    image: michalkaszubowski/node-micro-b:latest
+    ports:
+    - containerPort: 3001
