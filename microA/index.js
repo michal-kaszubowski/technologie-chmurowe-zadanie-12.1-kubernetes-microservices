@@ -9,5 +9,7 @@ app.get('/', (req, res) => {
 		.catch(err => console.error(err));
 });
 
+app.get('/checkme', (req, res) => res.send('Healthy'));
+
 const port = 3000;
 app.listen(port, () => console.log(`Server is UP & RUNNING on port ${port}!`));
