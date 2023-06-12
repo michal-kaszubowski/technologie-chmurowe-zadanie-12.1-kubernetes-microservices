@@ -31,6 +31,16 @@ spec:
                 secretKeyRef:
                   name: db-secret
                   key: password
+            - name: MONGO_HOST
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: host
+            - name: MONGO_PORT
+              valueFrom:
+                configMapKeyRef:
+                  name: db-config
+                  key: port
         - name: db
           image: mongo:latest
           ports:
